@@ -1,4 +1,3 @@
-package Java.OOPsConceptPrograms;
 
 class Account{
  private String acc_String;

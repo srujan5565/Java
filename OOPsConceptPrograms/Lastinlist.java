@@ -1,4 +1,3 @@
-package Java.OOPsConceptPrograms;
 
 import java.util.ArrayList;
 import java.util.Scanner;

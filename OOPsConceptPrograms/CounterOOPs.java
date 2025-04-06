@@ -1,4 +1,3 @@
-package Java.OOPsConceptPrograms;
 class Counter{
     private int count,init;
     Counter(int count){

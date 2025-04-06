@@ -1,4 +1,3 @@
-package Java.OOPsConceptPrograms;
 import java.util.Scanner;
 public class prime_cv {
     public static void main(String[] args) {

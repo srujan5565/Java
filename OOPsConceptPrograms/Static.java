@@ -1,4 +1,3 @@
-package Java.OOPsConceptPrograms;
 public class Static {
     static int a=10;
     static int b=20;
