@@ -1,0 +1,182 @@
+/*
+Exception handling in java:
+
+	-> Exception handling is a mechanism of converting system error messages into user friendly
+	messages.
+	
+	-> Runtime errors in java are known as exceptions.
+	-> System error messages are those which are unable to understand by enduser.
+	-> user friendly messages are those which are understandable by end user.
+	
+	Generally, errors are of two types.
+		-> compile time errors.
+		-> run time errors. 
+		
+		-> Compilation erros occurs due to poor understanding of the lang.
+		-> Run time errors are those which are occuring in a program when the user inputs
+		   invalid data.
+		   
+		  -> The runtime errors must be always converted by the java programmer into user
+			 friendly messages by using the concept called " exception handling ".
+	
+		
+	Types of exceptions:
+			In java there are two types of exceptions.
+				-> predefined exceptions
+				-> user defined / customized exceptions
+				
+	
+	Predefined exceptions are divided into 2 types.
+	
+		-> Asynchronous exceptions.
+		-> Synchronous exceptions.
+		
+		
+			-> Asynchronous exceptions deals with hardware problems.
+			-> Inorder to deal with Asynchronous exceptions, there is a predefined class called	
+				java.lang.Error.
+				
+				
+			-> Synchronous exceptions deals with programatic errors.
+			-> Inorder to deal with Synchronous exceptions, there is a predefined class called
+				java.lang.Exception.
+				
+				Synchronous exceptions are divided into two types.
+					-> checked exceptions
+					-> unchecked exceptions
+					
+				-> checked exception always deals with compiletime erros such as "Class not
+				   found", "interface nto found".
+				   
+				-> unchecked exceptions deals with programatic runtime errors such as
+					"ArithmeticException", "NumberFormatException","ArrayIndexOutOfBoundsException",
+					"FileNotFoundException" etc.
+					
+			To handle an exception, identify all the statements that may cause an exception and 
+			enclose them with a "try" block. Every "try" block should be followed with a "catch"
+			block. This "catch" statements takes an argument that is in the name of exception, 
+			that is trying to handle. This block is executed only when the exception occurs in the
+			above statements present in the 'try' block. If the exception doesn't rise, the 'catch'
+			block will not be executed. A 'try' should be explicitly followed by a 'catch' block.
+			These 'catch' blocks can be single or multiple, but multiple 'try' can't have a single 
+			'catch'. Each 'try' should have a separate catch.
+			
+			
+	Syntax for exception handling:
+	
+		Inorder to handle exceptions in java the following keywords are used. They are
+		
+			-> try
+			-> catch
+			-> finally
+			-> throws
+			-> throw
+			
+		try
+		{
+			block of statements that may cause exception (programatic errors)
+		}
+			
+		catch(Type_of_Exception1 Object1)
+			{
+				block of statements which provides
+				user friendly messages
+			}
+		catch(Type_of_Exception2 Object2)
+			{
+				block of statements which provides
+				user friendly messages
+			}	 
+			 
+		finally
+		{
+			block of statements which releases the resources;
+		}
+		
+	try block:
+	
+		->  This is the block in which we write the block of statements which are tobe
+			monitored by jvm at runtime. i.e try block must contain those statements which
+			causes errors at run time.
+			
+		-> If any exception is taking place, the control will be jumped into the appropriate
+			catch block.
+			
+		-> For every try block there must be atleast a single catch block.
+		
+	
+	catch block:
+		
+		-> catch block is used to catch system generated error messages for the code in
+		   the try, then generates user defined or user understandable messages.
+		   
+		-> In the catch block, there must an object of the appropriate execution class and it will be
+			internally referenced JVM, whenever the appropriate situations taking place.
+			
+			
+	Finally block:
+	
+		-> This is the block which execution is compulsory whether the exception is taken place
+			or not.
+		-> Writing the finally block is optional.
+		
+*/
+
+public class Exception1
+ {
+    public static void main(String[] args)
+    {
+        try
+        {
+           String s1=args[0];
+           String s2=args[1];
+           
+           int n1=Integer.parseInt(s1);
+           int n2=Integer.parseInt(s2);
+
+           int n3=n1/n2;
+
+           System.out.println(" Division value "+n3);
+
+        }
+        catch(ArithmeticException ae)
+        {
+            System.out.println(" Do not input zero for denominator ");
+        }
+
+        catch(NumberFormatException ne)
+        {
+            System.out.println(" Pass only numeric data ");
+        }
+
+        catch(ArrayIndexOutOfBoundsException ai)
+        {
+            System.out.println(" pass two values as arguments ");
+        }
+       
+        finally{
+
+            System.out.println(" The End ");
+        }
+        
+    }
+    
+}
+
+throws block:
+		
+		->  This is the keyword gives an indication to the calling function to keep the called 
+		    function under try and catch blocks.
+		
+		syn: 
+		<return type>method name(parameters) throws <type of exception-1>,<type of exception-2>,
+		....
+		{
+		
+		
+		
+		}
+		
+		/* program to illustrate the concept of throws keyword in a package */
+		
+		
