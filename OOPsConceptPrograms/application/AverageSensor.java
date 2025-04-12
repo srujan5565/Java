@@ -14,11 +14,15 @@ public class AverageSensor implements Sensor {
             s.setOn();
         }
     }   
-    public void setOff(){}  
+    public void setOff(){
+        for(Sensor s:sensors){
+            s.setOff();
+        }
+    }  
     public int read(){
         sensors.stream().filter(p -> !p.isOn())
                         .findAny()
-                        .ifPresent(s -> { throw new IllegalStateException(""); });
+                        .ifPresent(s -> { throw new IllegalStateException("Sensor is Off"); });
         int avg = (int) sensors.stream().mapToInt(Sensor::read).average().getAsDouble();
         readings.add(avg);
         return avg;

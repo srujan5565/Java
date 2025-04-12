@@ -49,6 +49,11 @@ public class Main {
     System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
     System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
 
+    helsinkiRegion.setOff();
+    System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
+    System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
+    System.out.println("temperature in Helsinki region " + helsinkiRegion.read() + " degrees Celsius");
+
     System.out.println("readings: " + helsinkiRegion.readings());
     
     }
