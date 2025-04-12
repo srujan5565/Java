@@ -34,6 +34,9 @@ Book(String author,String name,double weight){
     this.name=name;
     this.weight=weight;
 }
+public Book(String author2, int i, String string) {
+    //TODO Auto-generated constructor stub
+}
 public double weight(){
     return this.weight;
 }
