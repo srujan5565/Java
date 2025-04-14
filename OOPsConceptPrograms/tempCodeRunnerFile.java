@@ -1,2 +1,1 @@
-
-        //     String fruit = iterator.ne
+map.remove("grape");
