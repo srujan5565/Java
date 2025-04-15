@@ -10,6 +10,7 @@ class Genericp1<T>
     public String toString(){
         return this.t.toString();
     }
+
 }
 class Genericp2<T1,T2>
 {
