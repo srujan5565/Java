@@ -6,3 +6,4 @@ out/
 .settings
 .project
 .classpath
+/.sfdx
