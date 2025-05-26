@@ -1,0 +1,38 @@
+package com.infy.service;
+
+import com.infy.model.Candidate;
+import com.infy.model.CandidateReport;
+import com.infy.dao.CandidateDAO;
+public class CandidateService {
+	CandidateDAO cdao=new CandidateDAO();
+	// can have result as 'P' only if all 3 marks are 50 and above
+	public String addCandidate(Candidate candidate) {
+		if(candidate.getMark1()<50 || candidate.getMark2()<50 ||candidate.getMark3()<50 || candidate.getResult()=='P')
+			return "Result should be 'F' (Fail) if student scores less than 50 in any one subject";
+		else
+			cdao.addCandidate(candidate);
+		return null;
+	}
+
+	// calculating grade for candidate based on his marks and result
+	public String calculateGrade(CandidateReport candidateReportTO) {
+		if(candidateReportTO.getResult()=='F') return "NA";
+		else {
+			float avg;
+			avg=(float)((candidateReportTO.getMark1()+candidateReportTO.getMark2()+candidateReportTO.getMark3())/3.0);
+			if(avg>=85) return "A";
+			else if(avg<75) return "C";
+			else return "B";
+		}
+	}
+
+	// populating String[] by calling calculateGrade(candidateReportTO) and returning the same.
+	public String[] getGradesForAllCandidates() {
+		String[] candidateGrades = new String[cdao.getAllCandidates().length];
+		int i=0;
+		for(CandidateReport CR:cdao.getAllCandidates()) {
+			candidateGrades[i++] = calculateGrade(CR);
+		}
+		return candidateGrades;
+	}
+}
