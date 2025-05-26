@@ -2,7 +2,7 @@
 bin/
 out/
 .vscode/settings.json
-/.metadata/
+.metadata/
 .settings
 .project
 .classpath
